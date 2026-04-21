@@ -6,8 +6,8 @@ import java.util.Map;
 
 public class Practice {
 
-  // Time Complexity:
-  // Space Complexity:
+  // Time Complexity: O(n) if n = array
+  // Space Complexity:O(n) if n = nums per array length
   // Remember to define your variables!
   public static List<Integer> findEvens(int[] array) {
     List<Integer> evens = new ArrayList<>();
@@ -20,8 +20,8 @@ public class Practice {
   }
 
   // Assume a rectangular array where #rows <= #cols
-  // Time Complexity:
-  // Space Complexity: 
+  // Time Complexity: O(r*c) where r is the number of rows and c is the number of columns 
+  // Space Complexity: O(1)
   // Remember to define your variables!
   public static int sumDiagonal(int[][] matrix) {
     int sum = 0;
