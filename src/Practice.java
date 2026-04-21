@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
@@ -122,16 +123,31 @@ public class Practice {
    * 
    * Once you finish, WRITE TESTS FOR IT in PracticeTest.java
    * 
-   * Time Complexity: 
-   * Space Complexity: 
+   * Time Complexity: O(n) where n is the length of nums
+   * Space Complexity: O(n) where n is the length of nums
    * 
    * @param nums An array of integers
    * @return the integer that shows up most commonly
    */
   public static int mostCommonTimeEfficient(int[] nums) {
-    // TODO: Complete this method with an implementation that runs
-    // in O(n) time. n = nums.length
-    return -1;
+    Map<Integer, Integer> theMap = new HashMap<>();
+    //populating the map
+    for(int num : nums){
+      if(theMap.containsKey(num)){
+        theMap.put(num, theMap.get(num)+1);
+      }else{
+        theMap.put(num, 1);
+      }
+    }
+
+    int largest = Integer.MIN_VALUE;
+    for(int i = nums.length-1; i >= 0; i--){
+      if(theMap.get(i) >= theMap.get(largest)){
+        largest = theMap.get(i);
+      }
+    }
+
+    return largest;
   }
 
   /**
@@ -150,8 +166,21 @@ public class Practice {
    * @return the integer that shows up most commonly
    */
   public static int mostCommonSpaceEfficient(int[] nums) {
+    int gCounter = 0;
+    int place = Integer.MAX_VALUE;
+
+    for(int i : nums){
+      int counter = 0;
+      for(int j : nums){
+        if(i==j) counter++;
+      }
+      if (gCounter <=counter && Arrays.asList(nums).indexOf(i)< place) {
+        gCounter = counter;
+        place = Arrays.asList(nums).indexOf(i);
+      }
+    }
     // TODO: Complete this method with an implementation that runs
     // in O(1) space.
-    return -1;
+    return nums[place];
   }
 }
