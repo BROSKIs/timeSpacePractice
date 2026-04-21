@@ -167,20 +167,31 @@ public class Practice {
    */
   public static int mostCommonSpaceEfficient(int[] nums) {
     int gCounter = 0;
-    int place = Integer.MAX_VALUE;
+    int result = nums[0];
 
-    for(int i : nums){
+    for (int i = 0; i < nums.length; i++ ) {
       int counter = 0;
-      for(int j : nums){
-        if(i==j) counter++;
+      for (int j = 0; j < nums.length; j++) {
+        if (nums[i] == nums[j]) {
+          counter ++;
+        }
+
       }
-      if (gCounter <=counter && Arrays.asList(nums).indexOf(i)< place) {
-        gCounter = counter;
-        place = Arrays.asList(nums).indexOf(i);
+
+      if (counter > gCounter) {
+        gCounter = counter; 
+        result = nums[i];
+
       }
-    }
+      
+
+    
+
     // TODO: Complete this method with an implementation that runs
     // in O(1) space.
-    return nums[place];
+    
   }
+  return result; 
+}
+  
 }
