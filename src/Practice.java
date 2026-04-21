@@ -140,10 +140,10 @@ public class Practice {
       }
     }
 
-    int largest = Integer.MIN_VALUE;
-    for(int i = nums.length-1; i >= 0; i--){
-      if(theMap.get(i) >= theMap.get(largest)){
-        largest = theMap.get(i);
+    int largest = nums[0];
+    for(int i = nums.length-2; i >= 0; i--){
+      if(theMap.get(nums[i]) >= theMap.get(largest)){
+        largest = nums[i];
       }
     }
 
@@ -159,8 +159,8 @@ public class Practice {
    * 
    * Once you finish, WRITE TESTS FOR IT in PracticeTest.java
    * 
-   * Time Complexity: 
-   * Space Complexity: 
+   * Time Complexity: O(n^2) where n = nums.length()
+   * Space Complexity: O(1)
    * 
    * @param nums An array of integers
    * @return the integer that shows up most commonly
