@@ -6,8 +6,8 @@ import java.util.Map;
 
 public class Practice {
 
-  // Time Complexity: 
-  // Space Complexity:
+  // Time Complexity: O(n) if n = array
+  // Space Complexity:O(n) if n = nums per array length
   // Remember to define your variables!
   public static List<Integer> findEvens(int[] array) {
     List<Integer> evens = new ArrayList<>();
@@ -20,8 +20,8 @@ public class Practice {
   }
 
   // Assume a rectangular array where #rows <= #cols
-  // Time Complexity:
-  // Space Complexity: 
+  // Time Complexity: O(r*c) where r is the number of rows and c is the number of columns 
+  // Space Complexity: O(1)
   // Remember to define your variables!
   public static int sumDiagonal(int[][] matrix) {
     int sum = 0;
@@ -32,8 +32,8 @@ public class Practice {
   }
   
 
-  // Time Complexity: 
-  // Space Complexity: 
+  // Time Complexity: O(n) where n is array.length
+  // Space Complexity: O(n) where n is the array.length
   // Remember to define your variables!
   public static <T> Map<T, Integer> countFrequencies(T[] array) {
     Map<T, Integer> frequencies = new HashMap<>();
@@ -43,8 +43,8 @@ public class Practice {
     return frequencies;
   }
 
-  // Time Complexity: O(n) where n is
-  // Space Complexity: O(n)
+  // Time Complexity: O(n^2)
+  // Space Complexity: O(n^2)
   // Remember to define your variables!
   public static List<Integer> evensToSquare(int n) {
     List<Integer> evens = new ArrayList<>();
@@ -54,8 +54,8 @@ public class Practice {
     return evens;
   }
 
-  // Time Complexity:
-  // Space Complexity:
+  // Time Complexity: O(ml * vl) where ml is the map lenght and vl is the length of entry.getValue
+  // Space Complexity: O(n) where n is the the total ammount of values in the whole entire map
   // Remember to define your variables!
   public static List<Integer> concatVals(Map<Integer, List<Integer>> map) {
     List<Integer> result = new ArrayList<>();
