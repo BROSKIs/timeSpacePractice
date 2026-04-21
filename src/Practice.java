@@ -165,23 +165,32 @@ public class Practice {
    * @return the integer that shows up most commonly
    */
   public static int mostCommonSpaceEfficient(int[] nums) {
-    int maxCount = 0;
+    int gCounter = 0;
     int result = nums[0];
-    int firstIndex = 0;
 
-    for (int i = 0; i < nums.length; i++) {
-      int count = 0;
+    for (int i = 0; i < nums.length; i++ ) {
+      int counter = 0;
       for (int j = 0; j < nums.length; j++) {
-        if (nums[i] == nums[j]) count++;
-      }
-      if (count > maxCount || (count == maxCount && i < firstIndex)) {
-        maxCount = count;
-        result = nums[i];
-        firstIndex = i;
-      }
-    }
+            if (nums[i] == nums[j]) {
+                counter++;
+            }
+          } 
 
-    return result;
+      if (counter > gCounter) {
+        gCounter = counter;
+        result = nums[i];
+      }
+      
+    }
+    return result; 
   }
-  
 }
+    // TODO: Complete this method with an implementation that runs
+    // in O(1) space.
+    
+ 
+  
+
+
+  
+  
