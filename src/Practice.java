@@ -173,8 +173,10 @@ public class Practice {
       int counter = 0;
       for(int j : nums){
         if(i==j) counter++;
+        System.out.println(counter + " " + gCounter);
+
       }
-      if (gCounter <=counter && Arrays.asList(nums).indexOf(i)< place) {
+      if (gCounter <= counter && Arrays.asList(nums).indexOf(i) < place && Arrays.asList(nums).indexOf(i) > 0) {
         gCounter = counter;
         place = Arrays.asList(nums).indexOf(i);
       }
